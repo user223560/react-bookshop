@@ -1,5 +1,11 @@
 @import "../../assets/styles/globals";
 
+// Helper class to make header sticky
+._stickyHeader {
+    position: sticky;
+    top: 0;
+}
+
 .header{
     padding-right: rem(72);
     padding-left: rem(72);

@@ -22,7 +22,7 @@ const MainContent = () => {
 
     return(
         <>
-            <header className={styles.header}>
+            <header className={`${styles.header} ${styles._stickyHeader}`}>
                 <nav className={styles.header__nav}>
                     <div className={styles.header__logo}>
                         <ImBooks />
