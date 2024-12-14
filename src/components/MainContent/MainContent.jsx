@@ -20,6 +20,15 @@ const MainContent = () => {
         }
     }
 
+    const handleChange = (event) => {
+        setSearch(event.target.value)
+    }
+    // Does nothing. Fix
+    const handleClick = (event) => {
+        event.preventDefault()
+        setSearch(search)
+    }
+
     return(
         <>
             <header className={`${styles.header} ${styles._stickyHeader}`}>
@@ -40,10 +49,10 @@ const MainContent = () => {
                                 type="text"
                                 placeholder="Search..."
                                 value={search}
-                                onChange={event => setSearch(event.target.value)}
+                                onChange={handleChange}
                                 onKeyPress={searchBook}
                             />
-                            <button>
+                            <button onClick={handleClick}>
                                 <CiSearch />
                             </button>
                         </div>
