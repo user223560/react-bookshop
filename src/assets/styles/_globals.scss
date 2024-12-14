@@ -1,0 +1,22 @@
+// px to rem
+@function rem($pixels, $context: 16) {
+    @return calc($pixels / $context) + 0rem;
+}
+
+:root {
+    // Fonts
+    --ft-inter: "Inter", sans-serif;
+    // Colors
+    --color-blue-1: hsl(212.05, 71.54%, 51.76%);  // #2c7edc
+    --color-blue-2: hsl(212.22, 81.82%, 25.88%);  // #0c3e78
+    --color-blue-3: hsl(212.31, 86.67%, 88.24%);  // #c7dffb
+    --color-blue-4: hsl(211.92, 100%, 30.59%);  // #00499c
+    --color-blue-5: hsl(212.08, 75.36%, 41.37%);  // #1a64b9
+    --color-blue-6: hsl(213.33, 90%, 96.08%);  // #ecf4fe
+    --color-white-1: hsl(0, 0%, 100%);  // #fff
+    --color-white-2: hsl(205.71, 12.73%, 89.22%);  // #e0e4e7
+    --color-red-1: hsl(341.97, 95.88%, 52.35%);  // #fa1157
+    --color-gray-1: hsl(216.92, 5.35%, 47.65%);  // #737880
+    --color-gray-2: hsl(0, 0%, 40%);  // #666666
+    --color-gray-3: hsl(0, 0%, 93.73%);  // #efefef
+}

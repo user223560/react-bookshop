@@ -1,0 +1,117 @@
+@import "../../assets/styles/globals";
+
+.card {
+
+    & button {
+        font-family: inherit;
+    } 
+
+    &__content {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        justify-content: center;
+        gap: rem(12);
+
+        & div {
+            cursor: pointer;
+        }
+    }
+
+    &__link {
+        height: rem(280);
+
+        & img {
+            min-width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__price {
+
+        & > span {
+            font-size: rem(20);
+            font-weight: 500;
+            line-height: rem(26);
+            white-space: nowrap;
+            color: var(--color-red-1);
+        }
+    }
+
+    &__title {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        line-clamp: 2;
+        line-height: rem(24);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        word-break: break-word;
+        transition: color 200ms ease;
+
+        &:hover {
+            color: var(--color-blue-1);
+        }
+    }
+
+    &__author {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        line-clamp: 2;
+        color: var(--color-gray-1);
+        font-size: rem(14);
+        line-height: rem(20);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        word-break: break-word;
+    }
+
+    &__btns {
+        display: flex;
+        margin-top: auto;
+        justify-content: space-between;
+        gap: rem(8);
+
+        & > button:nth-child(1) {
+            width: 100%;
+            height: rem(36);
+            font-size: rem(12);
+            font-weight: 600;
+            letter-spacing: rem(0.36);
+            line-height: rem(18);
+            text-transform: uppercase;
+            border-radius: rem(4);
+            color: var(--color-white-1);
+            background-color: var(--color-blue-1);
+            transition: background-color 200ms ease;
+
+            &:hover {
+                background-color: var(--color-blue-5);
+            }
+        }
+
+        & > button:nth-child(2) {
+            display: flex;
+            width: rem(36);
+            height: rem(36);
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            border-radius: rem(4);
+            color: var(--color-blue-1);
+            background-color: var(--color-blue-6);
+            transition: background-color 200ms ease;
+
+            &:hover {
+                background-color: var(--color-blue-3);
+            }
+
+            & > svg {
+                width: rem(24);
+                height: rem(24);
+            }
+        }
+    }
+}
