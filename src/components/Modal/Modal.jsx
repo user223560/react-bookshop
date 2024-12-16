@@ -3,7 +3,7 @@ import placeholder from "../../assets/images/book-placeholder.jpg"
 import styles from "./Modal.module.scss"
 
 
-const Modal=({show, item, onClose}) => {
+const Modal = ( {show, item, onClose} ) => {
     if(!show) {
         return null
     }

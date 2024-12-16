@@ -12,20 +12,32 @@ const MainContent = () => {
     const [search, setSearch] = useState("")
     const [bookData, setData] = useState([])
 
-    const searchBook = (event) => {
+    // const searchBook = (event) => {
+    //     if(event.key === "Enter" || event === "onclick") {
+    //         axios.get('https://www.googleapis.com/books/v1/volumes?q=' + search + '&key=AIzaSyDmkxWqx4frhzmp0LmcAXduhWusNo2XKC4'+'&maxResults=24&langRestrict=en')
+    //         .then(response => setData(response.data.items))
+    //         .catch(error => console.log(error))
+    //     }
+    // }
+
+    const searchBook = () => {
+        axios.get('https://www.googleapis.com/books/v1/volumes?q=' + search + '&key=AIzaSyDmkxWqx4frhzmp0LmcAXduhWusNo2XKC4'+'&maxResults=24&langRestrict=en')
+        .then(response => setData(response.data.items))
+        .catch(error => console.log(error))
+    }
+
+    const handleInputChange = (event) => {
+        setSearch(event.target.value)
+    }
+
+    const onEnterPress = (event) => {
         if(event.key === "Enter") {
-            axios.get('https://www.googleapis.com/books/v1/volumes?q=' + search + '&key=AIzaSyDmkxWqx4frhzmp0LmcAXduhWusNo2XKC4'+'&maxResults=24&langRestrict=en')
-            .then(response => setData(response.data.items))
-            .catch(error => console.log(error))
+            searchBook()
         }
     }
 
-    const handleChange = (event) => {
-        setSearch(event.target.value)
-    }
-    // Does nothing. Fix
     const handleClick = () => {
-        
+        searchBook()
     }
 
     return(
@@ -48,8 +60,8 @@ const MainContent = () => {
                                 type="text"
                                 placeholder="Search..."
                                 value={search}
-                                onChange={handleChange}
-                                onKeyPress={searchBook}
+                                onChange={handleInputChange}
+                                onKeyPress={onEnterPress}
                             />
                             <button onClick={handleClick}>
                                 <CiSearch />

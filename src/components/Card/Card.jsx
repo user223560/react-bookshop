@@ -6,7 +6,7 @@ import styles from "./Card.module.scss"
 
 
 const Card = ({book}) => {
-    const [show, setShow] = useState(false)
+    const [showModal, setShowModal] = useState(false)
     const [bookItem, setItem] = useState()
     console.log(book)
 
@@ -25,7 +25,7 @@ const Card = ({book}) => {
                     }
                     return (
                         <>
-                            <article className={styles.card} key={index} onClick={() => {setShow(true); setItem(item)}}>
+                            <article className={styles.card} key={index} onClick={() => {setShowModal(true); setItem(item)}}>
                                 <div className={styles.card__content}>
                                     <a className={styles.card__link} href="#">
                                         <img className={styles.card__img} src={thumbnail} alt={title} />
@@ -51,7 +51,7 @@ const Card = ({book}) => {
                                     </div>
                                 </div>
                             </article>
-                            <Modal show={show} item={bookItem} onClose={() => setShow(false)}/>
+                            <Modal show={showModal} item={bookItem} onClose={() => setShowModal(false)}/>
                         </>
                     )
                 })

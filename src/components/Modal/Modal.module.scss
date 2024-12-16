@@ -12,7 +12,7 @@
     left: 0;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(var(--color-blue-2), transparent);
+    background: linear-gradient(var(--color-white-1), var(--color-white-1));
 }
 
 // Modal window styles
@@ -24,6 +24,7 @@
         height: rem(550);
         overflow: hidden;
         padding: rem(24);
+        border: rem(2) solid var(--color-gray-3);
         border-radius: rem(4);
         background-color: var(--color-white-1);
         font-size: rem(21);
