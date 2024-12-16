@@ -115,14 +115,14 @@
     }
 
     &__title {
-        font-size: rem(23);
+        font-size: rem(21);
         margin-bottom: rem(10);
         letter-spacing: rem(0.48);
     }
 
     &__author {
         margin-bottom: rem(20);
-        font-size: rem(18);
+        font-size: rem(16);
     }
 
     &__publisher {
@@ -131,7 +131,7 @@
 
         & > p {
             margin-bottom: rem(10);
-            font-size: rem(16);
+            font-size: rem(14);
         }
 
         & > span {

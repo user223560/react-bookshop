@@ -12,18 +12,15 @@ const MainContent = () => {
     const [search, setSearch] = useState("")
     const [bookData, setData] = useState([])
 
-    // const searchBook = (event) => {
-    //     if(event.key === "Enter" || event === "onclick") {
-    //         axios.get('https://www.googleapis.com/books/v1/volumes?q=' + search + '&key=AIzaSyDmkxWqx4frhzmp0LmcAXduhWusNo2XKC4'+'&maxResults=24&langRestrict=en')
-    //         .then(response => setData(response.data.items))
-    //         .catch(error => console.log(error))
-    //     }
-    // }
+    const key = "AIzaSyDmkxWqx4frhzmp0LmcAXduhWusNo2XKC4"
 
-    const searchBook = () => {
-        axios.get('https://www.googleapis.com/books/v1/volumes?q=' + search + '&key=AIzaSyDmkxWqx4frhzmp0LmcAXduhWusNo2XKC4'+'&maxResults=24&langRestrict=en')
-        .then(response => setData(response.data.items))
-        .catch(error => console.log(error))
+    const searchBook = async () => {
+        try {
+            const response = await axios.get(`https://www.googleapis.com/books/v1/volumes?q=${search}&key=${key}&printType=books&startIndex=0&maxResults=24&langRestrict=en`)
+            setData(response.data.items)
+        } catch(error) {
+            console.log(error)
+        }
     }
 
     const handleInputChange = (event) => {
