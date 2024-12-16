@@ -3,6 +3,14 @@
     @return calc($pixels / $context) + 0rem;
 }
 
+// 1920px screen width
+$breakpoints-up: ("desktop": "120em");
+@mixin breakpoint-up ($size) {
+    @media (min-width: map-get($breakpoints-up, $size)) {
+        @content;
+    }
+}
+
 :root {
     // Fonts
     --ft-inter: "Inter", sans-serif;

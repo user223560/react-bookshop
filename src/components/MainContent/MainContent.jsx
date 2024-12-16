@@ -1,4 +1,4 @@
-import {useState} from "react"
+import { useState } from "react"
 import { PiBookBookmark, PiShoppingCartLight } from "react-icons/pi"
 import { CiSearch, CiBookmark, CiUser } from "react-icons/ci"
 import { GiCardboardBoxClosed } from "react-icons/gi"
@@ -24,9 +24,8 @@ const MainContent = () => {
         setSearch(event.target.value)
     }
     // Does nothing. Fix
-    const handleClick = (event) => {
-        event.preventDefault()
-        setSearch(search)
+    const handleClick = () => {
+        
     }
 
     return(
